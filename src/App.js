@@ -17,7 +17,6 @@ const App = () => {
       setCords([position.coords.latitude, position.coords.longitude]);
     });
   }, []);
-  console.log(`cords`, cords);
 
   const addPinToMap = (a, b) => {
     let updatedPins = {
@@ -30,7 +29,6 @@ const App = () => {
         },
       },
     };
-    console.log(`pins`, pins);
     addPins([...pins, updatedPins]);
   };
 
@@ -38,7 +36,6 @@ const App = () => {
     let newLine = { ...polyline };
     let line = [a, b];
     newLine.location.push(line);
-    console.log(`newLine`, newLine);
     setPolyLines(newLine);
   };
 
@@ -46,7 +43,6 @@ const App = () => {
     e.preventDefault();
     addPinToMap(e.target[0].value, e.target[1].value);
     addPolyLine(e.target[0].value, e.target[1].value);
-    console.log(`e.target.value`, e.target[0].value);
   };
 
   return (
