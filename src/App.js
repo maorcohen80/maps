@@ -44,13 +44,10 @@ const App = () => {
     addPinToMap(e.target[0].value, e.target[1].value);
     addPolyLine(e.target[0].value, e.target[1].value);
     setCords(e.target[0].value, e.target[1].value);
-    console.log(`pins`, pins);
     if (pins.length > 0 && pins.length % 2 === 0) {
       addPolyLine(pins[pins.length % 2].location[0], pins[pins.length % 2].location[1]);
     }
   };
-
-  console.log(`cords`, cords);
 
   return (
     <div className="App">
